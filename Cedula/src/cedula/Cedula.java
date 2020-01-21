@@ -21,6 +21,7 @@ public class Cedula {
         
         Scanner sc = new Scanner(System.in);
         
+        System.out.println("Ingrese su número de cédula");
         String numc = sc.next();
         String [] numced = numc.split("");
         String verf = numced[numced.length -1];
