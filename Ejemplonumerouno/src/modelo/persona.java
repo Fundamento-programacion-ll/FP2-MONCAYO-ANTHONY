@@ -10,8 +10,8 @@ package modelo;
  * @author antho
  */
 public class persona {
-    String nombres, apellidos,direccion;
-    int cedula, edad,telefono;
+    String nombres, apellidos,cedula,telefono,direccion;
+    int edad;
     char genero;
     boolean estado_civil;
 
@@ -42,11 +42,11 @@ public class persona {
         this.direccion = direccion;
     }
 
-    public int getCedula() {
+    public String getCedula() {
         return cedula;
     }
 
-    public void setCedula(int cedula) {
+    public void setCedula(String cedula) {
         this.cedula = cedula;
     }
 
@@ -58,11 +58,11 @@ public class persona {
         this.edad = edad;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
@@ -82,16 +82,18 @@ public class persona {
         this.estado_civil = estado_civil;
     }
 
-    public persona(String nombres, String apellidos, String direccion, int cedula, int edad, int telefono, char genero, boolean estado_civil) {
+    public persona(String nombres, String apellidos, String cedula, String telefono, String direccion, int edad, char genero, boolean estado_civil) {
         this.nombres = nombres;
         this.apellidos = apellidos;
-        this.direccion = direccion;
         this.cedula = cedula;
-        this.edad = edad;
         this.telefono = telefono;
+        this.direccion = direccion;
+        this.edad = edad;
         this.genero = genero;
         this.estado_civil = estado_civil;
-    }    
+    }
+
+    
 
     @Override
     public String toString() {

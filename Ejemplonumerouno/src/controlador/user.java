@@ -5,10 +5,34 @@
  */
 package controlador;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author antho
  */
 public class user {
+    
+    ArrayList listapersonas = new ArrayList<String>();
+    
+    public String agregarpersona (String nombre){
+    
+        listapersonas.add(nombre);
+        return "persona agregada, "+ nombre;
+    }
+    
+    public String ListarPersona (){  
+        String lista="";
+        //for (Object persona: listapersonas) {
+          //  System.out.print(persona);
+        //}
+        for (int i = 0; i < listapersonas.size(); i++) {
+            System.out.println(listapersonas.get(i));
+            lista += listapersonas.get(i).toString()+"\n";
+        }
+        
+    return lista;
+    }
+    
     
 }

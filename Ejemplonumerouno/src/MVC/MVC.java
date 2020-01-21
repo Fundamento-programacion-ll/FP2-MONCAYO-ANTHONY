@@ -6,6 +6,7 @@
 package MVC;
 
 import modelo.persona;
+import vista.usuario;
 
 /**
  *
@@ -13,10 +14,17 @@ import modelo.persona;
  */
 public class MVC {
     public static void main(String[] args) {
+        usuario inicio = new usuario();
         
-        persona Kevin= new persona("Kevin", "Jimenez","la 41",1750432113,20,984534324,'m',true);
-        persona Bryan= new persona("Bryan", "Jimenez","la 41",1734654734,54,573727543,'m',true);
-        persona Juan= new persona("Juan", "Jimenez","la 41",1759365625,32,575625457,'m',true);
+        
+        persona Juana = new persona("Juana","Jimenez","1750420117","0987181053", "Carcelen", 0,'m', true);
+        persona Juan = new persona("Juana","Jimenez","1750420117","0987181053", "Carcelen", 0,'m', true);
+        persona Juanes = new persona("Juana","Jimenez","1750420117","0987181053", "Carcelen", 0,'m', true);
+        
+        //System.err.println(Juana);
+        
+        inicio.menu();
+        
     }
     
     
