@@ -10,3 +10,14 @@
 __hola mundo__
 ~~hola mundo~~
 *__hola mundo__*
+
+lista no ordenada
+
+
+* primero
+
+Lista ordenada 
+
+1.   r 
+## Link 
+Anthony [Wikipedia](https://es.wikipedia.org/wiki/Markdown)
