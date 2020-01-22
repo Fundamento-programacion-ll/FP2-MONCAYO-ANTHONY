@@ -22,4 +22,5 @@ Lista ordenada
 ## Link 
 Anthony [Wikipedia](https://es.wikipedia.org/wiki/Markdown)
 
-![pacman](https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Pac-Man_Cutscene.svg/283px-Pac-Man_Cutscene.svg.png)
+
+![imagen 1](https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Pac-Man_Cutscene.svg/283px-Pac-Man_Cutscene.svg.png)
