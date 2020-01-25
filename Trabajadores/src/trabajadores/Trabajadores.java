@@ -5,6 +5,8 @@
  */
 package trabajadores;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author antho
@@ -15,7 +17,13 @@ public class Trabajadores {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        fecha f= new fecha();
+        empleado em = new empleado();
+        
+        int numemp = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese cuantos empleados va a ingresar "));
+        em.ingresarempleados(numemp);
+        em.listaempleados();
     }
     
 }

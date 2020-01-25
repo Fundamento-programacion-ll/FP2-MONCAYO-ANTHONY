@@ -11,38 +11,37 @@ package trabajadores;
  */
 public class fecha {
     
-    int dia;
-    int mes;
-    int anio;
+    int [] dia;
+    int [] mes;
+    int [] anio;
 
-    public int getDia() {
+    public int[] getDia() {
         return dia;
     }
 
-    public void setDia(int dia) {
+    public void setDia(int[] dia) {
         this.dia = dia;
     }
 
-    public int getMes() {
+    public int[] getMes() {
         return mes;
     }
 
-    public void setMes(int mes) {
+    public void setMes(int[] mes) {
         this.mes = mes;
     }
 
-    public int getAnio() {
+    public int[] getAnio() {
         return anio;
     }
 
-    public void setAnio(int anio) {
+    public void setAnio(int[] anio) {
         this.anio = anio;
     }
 
-    public fecha(int dia, int mes, int anio) {
-        this.dia = dia;
-        this.mes = mes;
-        this.anio = anio;
+    
+    
+    public fecha() {
     }
     
     

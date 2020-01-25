@@ -11,4 +11,8 @@ package trabajadores;
  */
 public class metodos {
     
+    empleado em = new empleado();
+    
+    
+    
 }
