@@ -13,11 +13,11 @@ public class metodos {
     
     
     public int ejercicio (int numero){
-        serie s = new serie(numero);
+       
        
        int suma=1;
        
-        for (int i = 0; i <s.getNumero(); i++) {
+        for (int i = 0; i <numero; i++) {
             suma =suma*2;    
         }
     return suma;
