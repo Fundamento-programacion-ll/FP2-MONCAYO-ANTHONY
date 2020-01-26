@@ -5,6 +5,7 @@
  */
 package trabajadores;
 
+import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
 
 /**
@@ -46,6 +47,15 @@ public class empleado {
     }
 
     public void setFecha_ingreso(int[] fecha_ingreso) {
+        /**String datosVector; 
+        
+        datosVector = JOptionPane.showInputDialog(null, "Ingrese la fecha de ingreso de la\n siguiente forma: \n DD/MM/AAAA \n separados por un una barra diagonal");
+        
+        StringTokenizer tokkens=new StringTokenizer(datosVector, "/"); //datos,separador
+        
+        for (int i = 0; i < this.fecha_ingreso.length&&tokkens.hasMoreTokens(); i++) {   
+            this.fecha_ingreso[i] = Integer.parseInt(tokkens.nextToken());   
+        }**/
         this.fecha_ingreso = fecha_ingreso;
     }
 
@@ -54,6 +64,16 @@ public class empleado {
     }
 
     public void setFecha_nacimiento(int[] fecha_nacimiento) {
+        /**
+        String datosVector; 
+        
+        datosVector = JOptionPane.showInputDialog(null, "Ingrese la fecha de nacimiento de la\n siguiente forma: \n DD/MM/AAAA \n separados por un una barra diagonal");
+        
+        StringTokenizer tokkens=new StringTokenizer(datosVector, "/"); //datos,separador
+        
+        for (int i = 0; i < this.fecha_nacimiento.length&&tokkens.hasMoreTokens(); i++) {   
+            this.fecha_nacimiento[i] = Integer.parseInt(tokkens.nextToken());   
+        }**/
         this.fecha_nacimiento = fecha_nacimiento;
     }
     
