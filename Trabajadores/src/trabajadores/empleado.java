@@ -127,11 +127,26 @@ public class empleado {
         int [] sal = getSalario();
         String [] feching = getFecha_ingreso();
         String [] fechnac = getFecha_nacimiento();
-        
+        System.out.println("Lista de Empleados");
+        int burb=0;
         for (int i = 0; i <nom.length; i++) {
             
             System.out.println("Empleado N°: "+ (i+1));
             System.out.println("Nombre: "+nom[i]+" Apellido: "+ape[i]+" Salario: "+ sal[i]+" Fecha de Ingreso: "+ feching[i]+" Fecha de Nacimiento: "+fechnac[i]+"\n");
         }
+        for (int i = 0; i <nom.length; i++) {
+            for (int j = 0; j <nom.length; j++) {
+                if(sal[j]<sal[i]){
+                    burb= sal[i];
+                    sal[i]= sal[j];
+                    sal[j]=burb;
+                }
+            }
+            
+        }
+        
+        System.out.println("Empleado con mayor salario: "+ sal [0]);
+        System.out.println("Empleado con mas antigüedad: ");
+        
     }
 }
