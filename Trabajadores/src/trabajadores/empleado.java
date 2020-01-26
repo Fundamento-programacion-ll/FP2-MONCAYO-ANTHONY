@@ -303,7 +303,7 @@ public class empleado {
         
         
         System.out.println("Empleado con mayor salario: "+ sal [0]+ " Empleado: "+ nom [0] +" "+ ape [0]);
-        System.out.println("Empleado con mas antigüedad: " +nom2[0]+" "+ape2[0]+ "con :"+ ant[0]+ " años /"+ meses[0]+" meses / " +dias[0]+" días");
+        System.out.println("Empleado con mas antigüedad: " +nom2[0]+" "+ape2[0]+ " con : "+ ant[0]+ " años /"+ meses[0]+" meses / " +dias[0]+" días");
         
     }
 }

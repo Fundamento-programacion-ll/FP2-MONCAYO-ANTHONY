@@ -5,8 +5,7 @@
  */
 package trabajadores;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -18,10 +17,7 @@ public class Trabajadores {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        
-        Calendar c1 = Calendar.getInstance();
-        Calendar c2 = new GregorianCalendar();
+    public static void main(String[] args) {        
         
         fecha f= new fecha();
         empleado em = new empleado();
@@ -30,7 +26,7 @@ public class Trabajadores {
         em.ingresarempleados(numemp);
         em.listaempleados();
         
-        System.out.println("dia: "+ f.getDia()+ " mes "+ f.getMes() + " anio "+ f.getAnio());
+        
     }
     
 }
