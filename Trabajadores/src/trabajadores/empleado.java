@@ -16,7 +16,7 @@ public class empleado {
     
     String [] nombre,apellidos;
     int []salario;
-    int [] fecha_ingreso, fecha_nacimiento;
+    String [] fecha_ingreso, fecha_nacimiento;
 
     public String[] getNombre() {
         return nombre;
@@ -42,11 +42,11 @@ public class empleado {
         this.salario = salario;
     }
 
-    public int[] getFecha_ingreso() {
+    public String[] getFecha_ingreso() {
         return fecha_ingreso;
     }
 
-    public void setFecha_ingreso(int[] fecha_ingreso) {
+    public void setFecha_ingreso(String[] fecha_ingreso) {
         /**String datosVector; 
         
         datosVector = JOptionPane.showInputDialog(null, "Ingrese la fecha de ingreso de la\n siguiente forma: \n DD/MM/AAAA \n separados por un una barra diagonal");
@@ -59,11 +59,11 @@ public class empleado {
         this.fecha_ingreso = fecha_ingreso;
     }
 
-    public int[] getFecha_nacimiento() {
+    public String[] getFecha_nacimiento() {
         return fecha_nacimiento;
     }
 
-    public void setFecha_nacimiento(int[] fecha_nacimiento) {
+    public void setFecha_nacimiento(String[] fecha_nacimiento) {
         /**
         String datosVector; 
         
@@ -77,7 +77,7 @@ public class empleado {
         this.fecha_nacimiento = fecha_nacimiento;
     }
     
-    public empleado(String[] nombre, String[] apellidos, int[] salario, int[] fecha_ingreso, int[] fecha_nacimiento) {
+    public empleado(String[] nombre, String[] apellidos, int[] salario, String[] fecha_ingreso, String[] fecha_nacimiento) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.salario = salario;
@@ -93,10 +93,10 @@ public class empleado {
         String [] nom = new String[numempleados];
         String [] ape = new String[numempleados];
         int [] sal = new int[numempleados];
-        int [] feching = new int[numempleados];
-        int [] fechnac = new int[numempleados];
-        int naci =0;
-        int ing = 0;
+        String [] fing = new String[numempleados];
+        String [] fnac = new String[numempleados];
+        //int naci =0;
+        //int ing = 0;
         for (int i = 0; i < numempleados; i++) {
             String  n = JOptionPane.showInputDialog(null,"Ingrese el Nombre del empleado N°: "+ (i+1));
             nom [i] = n;
@@ -105,20 +105,19 @@ public class empleado {
             int salr = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese el Salario del empleado N°: "+ (i+1)));
             sal [i] = salr;
             String emp = JOptionPane.showInputDialog(null,"Ingrese la fecha de ingreso del empleado N°: "+(i+1)+" de la\n siguiente forma: \n DD/MM/AAAA \n separados por un una barra diagonal");
-            String [] obtfing = emp.split("");
-            ing = Integer.parseInt(emp);
-            feching [i] = ing;
+          String [] obtfing = emp.split("");
+            fing[i] = emp;
+//            ing = Integer.parseInt(emp);
             String nac = JOptionPane.showInputDialog(null,"Ingrese la fecha de nacimiento del empleado N°: "+(i+1)+" de la\n siguiente forma: \n DD/MM/AAAA \n separados por un una barra diagonal");
-            String [] obtfnac = nac.split("");
-            naci = Integer.parseInt(nac);
-            fechnac [i] = naci;
-            
+          String [] obtfnac = nac.split("");
+            fnac [i] = nac;
+//            naci = Integer.parseInt(nac);
         }
         setNombre(nom);
         setApellidos(ape);
         setSalario(sal);
-        setFecha_ingreso(feching);
-        setFecha_nacimiento(fechnac);
+        setFecha_ingreso(fing);
+        setFecha_nacimiento(fnac);
     }
     
     public void listaempleados (){
@@ -126,8 +125,8 @@ public class empleado {
         String [] nom = getNombre();
         String [] ape = getApellidos();
         int [] sal = getSalario();
-        int [] feching = getFecha_ingreso();
-        int [] fechnac = getFecha_nacimiento();
+        String [] feching = getFecha_ingreso();
+        String [] fechnac = getFecha_nacimiento();
         
         for (int i = 0; i <nom.length; i++) {
             
