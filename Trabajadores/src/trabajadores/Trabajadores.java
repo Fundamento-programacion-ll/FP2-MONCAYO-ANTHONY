@@ -26,7 +26,7 @@ public class Trabajadores {
         fecha f= new fecha();
         empleado em = new empleado();
         
-        int numemp = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese cuantos empleados va a ingresar "));
+        int numemp = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese cuantos empleados va a ingresar :"));
         em.ingresarempleados(numemp);
         em.listaempleados();
         
