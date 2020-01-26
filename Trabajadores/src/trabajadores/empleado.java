@@ -132,9 +132,9 @@ public class empleado {
         String [] anio = new String[nom.length];
         String [] fech = new String[nom.length];
         String dg1,dg2,dg3,dg4,dg5,dg6,dg7,dg8,dg9,dg10;
-        int [] d = new int[1];
-        int [] m = new int[1];
-        int [] a = new int[3];
+        int [] d = new int[2];
+        int [] m = new int[2];
+        int [] a = new int[4];
         
             
         System.out.println("Lista de Empleados");
@@ -144,6 +144,13 @@ public class empleado {
             
             fech  = feching[i].split("");
             dg1 = fech[fech.length - 10];
+            dg2 = fech[fech.length - 9];
+            dg3 = fech[fech.length - 7];
+            dg4 = fech[fech.length - 6];
+            dg5 = fech[fech.length - 4];
+            dg6 = fech[fech.length - 3];
+            dg7 = fech[fech.length - 2];
+            dg8 = fech[fech.length - 1];
             
       /**      
             dg1 = feching[feching.length - 10];
@@ -157,16 +164,19 @@ public class empleado {
             dg9 = feching[feching.length - 2];
             dg10 = feching[feching.length - 1];
 **/            
-            dia [i] = dg1;
-            mes [i] = "2";
-            anio [i]= "3";
+            dia [i] = dg1+dg2;
+            mes [i] = dg3+dg4;
+            anio [i]= dg5+dg6+dg7+dg8;
+            
             d [i]= Integer.parseInt(dia [i]);
+            m [i]= Integer.parseInt(mes [i]);
+            a [i]= Integer.parseInt(anio [i]);
             /**d [i]= Integer.parseInt(dia [i]);
             m [i]= Integer.parseInt(mes [i]);
             a [i]= Integer.parseInt(anio [i]);
             **/
             System.out.println("Empleado N°: "+ (i+1));
-            System.out.println("Nombre: "+nom[i]+" Apellido: "+ape[i]+" Salario: "+ sal[i]+" Fecha de Ingreso: "+ feching[i]+" dia: "+ d[i]+" mes: "+mes[i]+" anio: "+anio[i]+" Fecha de Nacimiento: "+fechnac[i]+"\n");
+            System.out.println("Nombre: "+nom[i]+" Apellido: "+ape[i]+" Salario: "+ sal[i]+" Fecha de Ingreso: "+ feching[i]+" dia: "+ d[i]+" mes: "+m[i]+" anio: "+a[i]+" Fecha de Nacimiento: "+fechnac[i]+"\n");
         }
         for (int i = 0; i <nom.length; i++) {
             for (int j = 0; j <nom.length; j++) {
