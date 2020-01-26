@@ -127,13 +127,46 @@ public class empleado {
         int [] sal = getSalario();
         String [] feching = getFecha_ingreso();
         String [] fechnac = getFecha_nacimiento();
+        String [] dia = new String[nom.length];
+        String [] mes = new String[nom.length];
+        String [] anio = new String[nom.length];
+        String [] fech = new String[nom.length];
+        String dg1,dg2,dg3,dg4,dg5,dg6,dg7,dg8,dg9,dg10;
+        int [] d = new int[1];
+        int [] m = new int[1];
+        int [] a = new int[3];
+        
+            
         System.out.println("Lista de Empleados");
         int burb=0;
         String temp ="";
         for (int i = 0; i <nom.length; i++) {
             
+            fech  = feching[i].split("");
+            dg1 = fech[fech.length - 10];
+            
+      /**      
+            dg1 = feching[feching.length - 10];
+            dg2 = feching[feching.length - 9];
+            dg3 = feching[feching.length - 8];
+            dg4 = feching[feching.length - 7];
+            dg5 = feching[feching.length - 6];
+            dg6 = feching[feching.length - 5];
+            dg7 = feching[feching.length - 4];
+            dg8 = feching[feching.length - 3];
+            dg9 = feching[feching.length - 2];
+            dg10 = feching[feching.length - 1];
+**/            
+            dia [i] = dg1;
+            mes [i] = "2";
+            anio [i]= "3";
+            d [i]= Integer.parseInt(dia [i]);
+            /**d [i]= Integer.parseInt(dia [i]);
+            m [i]= Integer.parseInt(mes [i]);
+            a [i]= Integer.parseInt(anio [i]);
+            **/
             System.out.println("Empleado N°: "+ (i+1));
-            System.out.println("Nombre: "+nom[i]+" Apellido: "+ape[i]+" Salario: "+ sal[i]+" Fecha de Ingreso: "+ feching[i]+" Fecha de Nacimiento: "+fechnac[i]+"\n");
+            System.out.println("Nombre: "+nom[i]+" Apellido: "+ape[i]+" Salario: "+ sal[i]+" Fecha de Ingreso: "+ feching[i]+" dia: "+ d[i]+" mes: "+mes[i]+" anio: "+anio[i]+" Fecha de Nacimiento: "+fechnac[i]+"\n");
         }
         for (int i = 0; i <nom.length; i++) {
             for (int j = 0; j <nom.length; j++) {
@@ -154,7 +187,7 @@ public class empleado {
             
         }
         
-        System.out.println("Empleado con mayor salario: "+ sal [0]+ " Empleado: "+ nom [0] + ape [0]);
+        System.out.println("Empleado con mayor salario: "+ sal [0]+ " Empleado: "+ nom [0] +" "+ ape [0]);
         System.out.println("Empleado con mas antigüedad: ");
         
     }

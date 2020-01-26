@@ -57,13 +57,5 @@ public class fecha {
         this.dia = getDia();
         this.mes = getMes();
         this.anio = getAnio();
-    }
-
-    
-
-    
-
-    
-    
-    
+    }  
 }
