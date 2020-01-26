@@ -129,6 +129,7 @@ public class empleado {
         String [] fechnac = getFecha_nacimiento();
         System.out.println("Lista de Empleados");
         int burb=0;
+        String temp ="";
         for (int i = 0; i <nom.length; i++) {
             
             System.out.println("Empleado N°: "+ (i+1));
@@ -140,12 +141,20 @@ public class empleado {
                     burb= sal[i];
                     sal[i]= sal[j];
                     sal[j]=burb;
+                    
+                    temp= nom[i];
+                    nom[i]= nom[j];
+                    nom[j]=temp;
+                    
+                    temp= ape[i];
+                    ape[i]= ape[j];
+                    ape[j]=temp;
                 }
             }
             
         }
         
-        System.out.println("Empleado con mayor salario: "+ sal [0]);
+        System.out.println("Empleado con mayor salario: "+ sal [0]+ " Empleado: "+ nom [0] + ape [0]);
         System.out.println("Empleado con mas antigüedad: ");
         
     }
