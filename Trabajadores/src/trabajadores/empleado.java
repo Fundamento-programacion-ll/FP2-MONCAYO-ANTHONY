@@ -5,6 +5,8 @@
  */
 package trabajadores;
 
+
+import java.util.Date;
 import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
 
@@ -124,6 +126,8 @@ public class empleado {
         
         String [] nom = getNombre();
         String [] ape = getApellidos();
+        String [] nom2 = getNombre();
+        String [] ape2 = getApellidos();
         int [] sal = getSalario();
         String [] feching = getFecha_ingreso();
         String [] fechnac = getFecha_nacimiento();
@@ -132,16 +136,20 @@ public class empleado {
         String [] anio = new String[nom.length];
         String [] fech = new String[nom.length];
         String dg1,dg2,dg3,dg4,dg5,dg6,dg7,dg8,dg9,dg10;
-        int [] d = new int[2];
-        int [] m = new int[2];
-        int [] a = new int[4];
-        
-            
+        int [] d = new int[nom.length];
+        int [] m = new int[nom.length];
+        int [] a = new int[nom.length];
+        int [] ant = new int[nom.length];
+        int [] dias = new int[nom.length];
+        int [] diam2 = new int[nom.length];
+        int [] meses = new int[nom.length];
+        int [] anios = new int[nom.length];
         System.out.println("Lista de Empleados");
         int burb=0;
+        int burb2=0;
         String temp ="";
-        for (int i = 0; i <nom.length; i++) {
-            
+        String temp2 ="";
+        for (int i = 0; i <nom.length; i++) {    
             fech  = feching[i].split("");
             dg1 = fech[fech.length - 10];
             dg2 = fech[fech.length - 9];
@@ -150,20 +158,7 @@ public class empleado {
             dg5 = fech[fech.length - 4];
             dg6 = fech[fech.length - 3];
             dg7 = fech[fech.length - 2];
-            dg8 = fech[fech.length - 1];
-            
-      /**      
-            dg1 = feching[feching.length - 10];
-            dg2 = feching[feching.length - 9];
-            dg3 = feching[feching.length - 8];
-            dg4 = feching[feching.length - 7];
-            dg5 = feching[feching.length - 6];
-            dg6 = feching[feching.length - 5];
-            dg7 = feching[feching.length - 4];
-            dg8 = feching[feching.length - 3];
-            dg9 = feching[feching.length - 2];
-            dg10 = feching[feching.length - 1];
-**/            
+            dg8 = fech[fech.length - 1];    
             dia [i] = dg1+dg2;
             mes [i] = dg3+dg4;
             anio [i]= dg5+dg6+dg7+dg8;
@@ -171,16 +166,55 @@ public class empleado {
             d [i]= Integer.parseInt(dia [i]);
             m [i]= Integer.parseInt(mes [i]);
             a [i]= Integer.parseInt(anio [i]);
-            /**d [i]= Integer.parseInt(dia [i]);
-            m [i]= Integer.parseInt(mes [i]);
-            a [i]= Integer.parseInt(anio [i]);
-            **/
+            
             System.out.println("Empleado N°: "+ (i+1));
-            System.out.println("Nombre: "+nom[i]+" Apellido: "+ape[i]+" Salario: "+ sal[i]+" Fecha de Ingreso: "+ feching[i]+" dia: "+ d[i]+" mes: "+m[i]+" anio: "+a[i]+" Fecha de Nacimiento: "+fechnac[i]+"\n");
+            System.out.println("Nombre: "+nom[i]+" Apellido: "+ape[i]+" Salario: "+ sal[i]+" Fecha de Ingreso: "+ feching[i]+" Fecha de Nacimiento: "+fechnac[i]+"\n");
+        }
+        //calculo de fecha
+        fecha f = new fecha();
+        int dac=f.getDia();
+        int mac=f.getMes();
+        int aac=f.getAnio();
+        int ultd= f.getUltdia();
+        
+        for (int i = 0; i < nom.length; i++) {
+        
+        ant [i]= (aac + 1900) - a[i];
+        if ( mac < m[i])
+        {
+            ant[i] --;
+        }
+        if ((m[i] == mac) && (dac < d[i]))
+        {
+            ant[i] --;
+        }
+        if (ant[i] > 1900)
+        {
+            ant[i] -= 1900;
+        }
+ 
+        // calculamos los meses
+        meses [i] =0;
+        if(mac>m[i])
+            meses[i]=mac-m[i];
+        if(mac<m[i])
+            meses[i]=12-(m[i]-mac);
+        if(mac==m[i] && d[i]>dac)
+            meses[i]=11;
+ 
+        // calculamos los dias
+        dias [i]=0;
+        if(dac>d[i])
+            dias[i]=dac-d[i];
+        if(dac<d[i])
+        {
+            dias[i]=ultd-(d[i]-dac);       
+        }
         }
         for (int i = 0; i <nom.length; i++) {
             for (int j = 0; j <nom.length; j++) {
                 if(sal[j]<sal[i]){
+        
                     burb= sal[i];
                     sal[i]= sal[j];
                     sal[j]=burb;
@@ -193,12 +227,83 @@ public class empleado {
                     ape[i]= ape[j];
                     ape[j]=temp;
                 }
+                if(ant[j]<ant[i]){
+        
+                    burb2= ant[i];
+                    ant[i]= ant[j];
+                    ant[j]=burb2;
+                    
+                    burb2= meses[i];
+                    meses[i]= meses[j];
+                    meses[j]=burb2;
+                    
+                    burb2= dias[i];
+                    dias[i]= dias[j];
+                    dias[j]=burb2;
+                    
+                    temp= nom2[i];
+                    nom2[i]= nom2[j];
+                    nom2[j]=temp;
+                    
+                    temp= ape2[i];
+                    ape2[i]= ape2[j];
+                    ape2[j]=temp;
+                }else if (ant[j]==ant[i]){
+                    if (meses[j]<meses[i]){
+                    
+                    burb2= ant[i];
+                    ant[i]= ant[j];
+                    ant[j]=burb2;
+                        
+                    burb2= meses[i];
+                    meses[i]= meses[j];
+                    meses[j]=burb2;
+                    
+                    burb2= dias[i];
+                    dias[i]= dias[j];
+                    dias[j]=burb2;
+                    
+                    temp= nom2[i];
+                    nom2[i]= nom2[j];
+                    nom2[j]=temp;
+                    
+                    temp= ape2[i];
+                    ape2[i]= ape2[j];
+                    ape2[j]=temp;
+                    
+                    }else if (meses[j]==meses[i]){
+                        if (dias [i]<dias [i]){
+                    burb2= ant[i];
+                    ant[i]= ant[j];
+                    ant[j]=burb2;
+                        
+                    burb2= meses[i];
+                    meses[i]= meses[j];
+                    meses[j]=burb2;
+                    
+                    burb2= dias[i];
+                    dias[i]= dias[j];
+                    dias[j]=burb2;
+                    
+                    temp= nom2[i];
+                    nom2[i]= nom2[j];
+                    nom2[j]=temp;
+                    
+                    temp= ape2[i];
+                    ape2[i]= ape2[j];
+                    ape2[j]=temp;
+                        }else {
+                            String verf ="Los empleados tienen la misma antigüedad";
+                        }
+                    }
+                }
             }
-            
         }
         
+        
+        
         System.out.println("Empleado con mayor salario: "+ sal [0]+ " Empleado: "+ nom [0] +" "+ ape [0]);
-        System.out.println("Empleado con mas antigüedad: ");
+        System.out.println("Empleado con mas antigüedad: " +nom2[0]+" "+ape2[0]+ "con :"+ ant[0]+ " años /"+ meses[0]+" meses / " +dias[0]+" días");
         
     }
 }

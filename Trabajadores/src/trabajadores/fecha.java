@@ -20,6 +20,8 @@ public class fecha {
     int dia ;
     int mes;
     int anio;
+    int ultdia;
+    
     
     public int getDia() {
         dia =  c2.get(Calendar.DATE);
@@ -49,6 +51,17 @@ public class fecha {
     public void setAnio(int anio) {
         this.anio = anio;
     }
+
+    public int getUltdia() {
+        ultdia = c2.get(Calendar.DAY_OF_MONTH);
+        return ultdia;
+    }
+
+    public void setUltdia(int ultdia) {
+        this.ultdia = ultdia;
+    }
+    
+    
     
     public fecha() {
     }
@@ -58,4 +71,13 @@ public class fecha {
         this.mes = getMes();
         this.anio = getAnio();
     }  
+
+    public fecha(int dia, int mes, int anio, int ultdia) {
+        this.dia = dia;
+        this.mes = mes;
+        this.anio = anio;
+        this.ultdia = ultdia;
+    }
+    
+    
 }
