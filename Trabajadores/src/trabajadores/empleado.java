@@ -105,17 +105,9 @@ public class empleado {
         int [] fechnac = getFecha_nacimiento();
         
         for (int i = 0; i <nom.length; i++) {
-            String n = nom[i];
-            String ap = ape[i];
-            int sala= sal[i];
-            int fing = feching[i];
-            int fnac = fechnac[i];
             
             System.out.println("Empleado N°: "+ (i+1));
             System.out.println("Nombre: "+nom[i]+" Apellido: "+ape[i]+" Salario: "+ sal[i]+" Fecha de Ingreso: "+ feching[i]+" Fecha de Nacimiento: "+fechnac[i]+"\n");
         }
-        
-    
     }
-    
 }

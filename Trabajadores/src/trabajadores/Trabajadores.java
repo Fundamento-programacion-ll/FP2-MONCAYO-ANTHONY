@@ -5,6 +5,9 @@
  */
 package trabajadores;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,12 +21,17 @@ public class Trabajadores {
      */
     public static void main(String[] args) {
         
+        Calendar c1 = Calendar.getInstance();
+        Calendar c2 = new GregorianCalendar();
+        
         fecha f= new fecha();
         empleado em = new empleado();
         
         int numemp = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese cuantos empleados va a ingresar "));
         em.ingresarempleados(numemp);
         em.listaempleados();
+        
+        System.out.println("dia: "+ f.getDia()+ " mes "+ f.getMes() + " anio "+ f.getAnio());
     }
     
 }
