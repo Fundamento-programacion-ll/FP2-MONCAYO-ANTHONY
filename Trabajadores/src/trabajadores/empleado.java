@@ -95,7 +95,8 @@ public class empleado {
         int [] sal = new int[numempleados];
         int [] feching = new int[numempleados];
         int [] fechnac = new int[numempleados];
-        
+        int naci =0;
+        int ing = 0;
         for (int i = 0; i < numempleados; i++) {
             String  n = JOptionPane.showInputDialog(null,"Ingrese el Nombre del empleado N°: "+ (i+1));
             nom [i] = n;
@@ -103,10 +104,14 @@ public class empleado {
             ape [i] = ap;
             int salr = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese el Salario del empleado N°: "+ (i+1)));
             sal [i] = salr;
-            int emp = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese la fecha de ingreso del empleado N°: "+ (i+1)));
-            feching [i] = emp;
-            int nac = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese la fecha de nacimiento del empleado N°: "+ (i+1)));
-            fechnac [i] = nac;
+            String emp = JOptionPane.showInputDialog(null,"Ingrese la fecha de ingreso del empleado N°: "+(i+1)+" de la\n siguiente forma: \n DD/MM/AAAA \n separados por un una barra diagonal");
+            String [] obtfing = emp.split("");
+            ing = Integer.parseInt(emp);
+            feching [i] = ing;
+            String nac = JOptionPane.showInputDialog(null,"Ingrese la fecha de nacimiento del empleado N°: "+(i+1)+" de la\n siguiente forma: \n DD/MM/AAAA \n separados por un una barra diagonal");
+            String [] obtfnac = nac.split("");
+            naci = Integer.parseInt(nac);
+            fechnac [i] = naci;
             
         }
         setNombre(nom);
