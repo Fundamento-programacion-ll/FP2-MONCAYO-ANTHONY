@@ -6,8 +6,7 @@
 package trabajadores;
 
 
-import java.util.Date;
-import java.util.StringTokenizer;
+
 import javax.swing.JOptionPane;
 
 /**
