@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import controlador.controladorArticulo;
 import modelo.articulo;
 
 /**
@@ -12,14 +13,15 @@ import modelo.articulo;
  * @author antho
  */
 public class Producto extends javax.swing.JFrame {
-
+        articulo nuevoarticulo = new articulo();
+        controladorArticulo articulocontrolador = new controladorArticulo();
+        
     /**
      * Creates new form Producto
      */
     public Producto() {
         initComponents();
         
-        articulo nuevoarticulo = new articulo();
         
     }
     
@@ -40,7 +42,7 @@ public class Producto extends javax.swing.JFrame {
         txtnombre = new javax.swing.JTextField();
         txtprecio = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtdescripcion = new javax.swing.JTextArea();
         txtdescp = new javax.swing.JLabel();
         btn_agregar = new javax.swing.JButton();
         btn_limpiar = new javax.swing.JButton();
@@ -53,15 +55,25 @@ public class Producto extends javax.swing.JFrame {
 
         jLabel4.setText("Producto");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtdescripcion.setColumns(20);
+        txtdescripcion.setRows(5);
+        jScrollPane1.setViewportView(txtdescripcion);
 
         txtdescp.setText("Descrippcion");
 
         btn_agregar.setText("Agregar");
+        btn_agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agregarActionPerformed(evt);
+            }
+        });
 
         btn_limpiar.setText("Limpiar");
+        btn_limpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_limpiarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -124,6 +136,25 @@ public class Producto extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarActionPerformed
+        
+        nuevoarticulo.setNombre(txtnombre.getText());
+        nuevoarticulo.setDescr(txtdescripcion.getText());
+        float precio =0;
+        precio = Float.parseFloat(txtprecio.getText());
+        nuevoarticulo.setPrecio(precio);
+        
+        articulocontrolador.ingresarArticulo(nuevoarticulo);
+        
+    }//GEN-LAST:event_btn_agregarActionPerformed
+
+    private void btn_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limpiarActionPerformed
+        txtdescripcion.setText("");
+        txtnombre.setText("");
+        txtprecio.setText("");
+        
+    }//GEN-LAST:event_btn_limpiarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -166,8 +197,8 @@ public class Producto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel txtdescp;
+    private javax.swing.JTextArea txtdescripcion;
     private javax.swing.JTextField txtnombre;
     private javax.swing.JTextField txtprecio;
     // End of variables declaration//GEN-END:variables

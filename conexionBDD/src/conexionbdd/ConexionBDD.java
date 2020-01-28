@@ -25,24 +25,6 @@ public class ConexionBDD {
         conector stringConexion = new conector();
         stringConexion.getConxion();
         
-        // Insert
-        
-        String insert =
-"insert into "
-+ "articulos(nombre,descripcion,precio) "
-+ "values(?,?,?) ";
-        
-        try {
-            ps = (PreparedStatement) stringConexion
-                    .getConxion()
-                    .prepareStatement(insert);
-            ps.setString(1, "X box");
-            ps.setString(2, "Consola juegos");
-            ps.setDouble(3, 500);
-            ps.executeUpdate();
-        } catch (SQLException ex) {
-            Logger.getLogger(ConexionBDD.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
     
 }
