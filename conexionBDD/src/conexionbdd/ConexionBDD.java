@@ -21,7 +21,7 @@ public class ConexionBDD {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-         PreparedStatement ps = null;
+        PreparedStatement ps = null;
         conector stringConexion = new conector();
         stringConexion.getConxion();
         

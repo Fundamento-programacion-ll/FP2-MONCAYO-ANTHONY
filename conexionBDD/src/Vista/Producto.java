@@ -15,17 +15,9 @@ import modelo.articulo;
 public class Producto extends javax.swing.JFrame {
         articulo nuevoarticulo = new articulo();
         controladorArticulo articulocontrolador = new controladorArticulo();
-        
-    /**
-     * Creates new form Producto
-     */
     public Producto() {
-        initComponents();
-        
-        
+        initComponents();   
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
