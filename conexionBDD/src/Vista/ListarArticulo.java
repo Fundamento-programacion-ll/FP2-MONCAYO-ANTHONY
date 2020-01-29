@@ -98,9 +98,9 @@ public class ListarArticulo extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_opcActionPerformed
 
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
-        if(cbx_opc.getSelectedItem()=="Nombre"){
+        if(cbx_opc.getSelectedIndex()==0){
             String nombre = txt_opc.getText();
-            articulocontrolador.Cosultaarticulo(nombre);
+            articulocontrolador.Cosultaarticulonombre(nombre);
         }else {
             int precio = Integer.parseInt(txt_opc.getText());
             articulocontrolador.Cosultaarticuloprecio(precio);

@@ -41,7 +41,7 @@ public class controladorArticulo {
         }
     }
     
-    public void Cosultaarticulo (String consultaarticulo){
+    /**public void Cosultaarticulo (String consultaarticulo){
         
         String sqlconsult = 
                 "Select * from articulos where nombre = ?";
@@ -63,7 +63,7 @@ public class controladorArticulo {
             System.out.println("ERROR"+ ex);
                   JOptionPane.showMessageDialog(null, "ERROR");
         }
-    }
+    }**/
     
     public void Cosultaarticuloprecio (int consultaarticulo){
         String nombre ="";
@@ -80,6 +80,34 @@ public class controladorArticulo {
                 float precio= rsconsult.getFloat("precio");
                 if (rsconsult.next()==true){
                 System.out.println("El producto es: "+ nombre +" "+ descripcion +" "+ precio);}
+            }
+            
+            JOptionPane.showMessageDialog(null, "Consulta realizada");
+            
+        } catch (SQLException ex) {
+            System.out.println("ERROR"+ ex);
+                  JOptionPane.showMessageDialog(null, "ERROR");
+        }
+    }
+    public void Cosultaarticulonombre (String consultaarticulo){
+        String nombre2 ="";
+        String sqlconsult = 
+                "Select * from articulos where nombre = ?";
+        try {
+            ps = conexion.getConxion().prepareStatement(sqlconsult);
+            ps.setString(1, consultaarticulo);
+            rsconsult = ps.executeQuery();
+            
+            while(rsconsult.next()){
+                
+                nombre2= rsconsult.getString("nombre");
+                
+                String descripcion= rsconsult.getString("descripcion");
+                
+                float precio= rsconsult.getFloat("precio");
+                System.out.println("El producto es: "+ nombre2 + " "+ descripcion + " "+ precio);
+                if (rsconsult.next()==true){
+                System.out.println("El producto es: "+ nombre2 +" "+ descripcion +" "+ precio);}
             }
             
             JOptionPane.showMessageDialog(null, "Consulta realizada");
