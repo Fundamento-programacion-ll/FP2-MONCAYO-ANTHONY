@@ -44,7 +44,7 @@ public class ListarArticulo extends javax.swing.JFrame {
 
         jLabel2.setText("Buscar por medio de:");
 
-        cbx_opc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nombre", "id" }));
+        cbx_opc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nombre", "id", "Ninguno" }));
 
         btn_buscar.setText("BUSCAR");
         btn_buscar.addActionListener(new java.awt.event.ActionListener() {
@@ -72,7 +72,7 @@ public class ListarArticulo extends javax.swing.JFrame {
                         .addComponent(txt_opc, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(btn_buscar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jLabel1))
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,7 +87,7 @@ public class ListarArticulo extends javax.swing.JFrame {
                 .addComponent(txt_opc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(9, 9, 9)
                 .addComponent(btn_buscar)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         pack();

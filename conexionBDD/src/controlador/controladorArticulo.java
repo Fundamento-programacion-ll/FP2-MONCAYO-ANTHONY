@@ -111,10 +111,38 @@ public class controladorArticulo {
             }
             
             JOptionPane.showMessageDialog(null, "Consulta realizada");
+        } catch (SQLException ex) {
+            System.out.println("ERROR"+ ex);
+                  JOptionPane.showMessageDialog(null, "ERROR");
+        }
+    }
+    public void Cosultaarticulo (String nombre, String consultaarticulo){
+        
+        String sqlconsult = 
+                "Select * from articulos where idArticulo = ?";
+        try {
+            ps = conexion.getConxion().prepareStatement(sqlconsult);
+            ps.setString(1, consultaarticulo);
+            rsconsult = ps.executeQuery();
+            
+            while(rsconsult.next()){
+                nombre= rsconsult.getString("nombre");
+                String descripcion= rsconsult.getString("descripcion");
+                float precio= rsconsult.getFloat("precio");
+                if (rsconsult.next()==true){
+                System.out.println("El producto es: "+ nombre +" "+ descripcion +" "+ precio);}
+            }
+            
+            JOptionPane.showMessageDialog(null, "Consulta realizada");
             
         } catch (SQLException ex) {
             System.out.println("ERROR"+ ex);
                   JOptionPane.showMessageDialog(null, "ERROR");
         }
+    }
+    
+    public void actualizar (){
+    
+    
     }
 }
