@@ -13,7 +13,7 @@ import modelo.articulo;
  * @author antho
  */
 public class ListarArticulo extends javax.swing.JFrame {
-    articulo consultaarticulo = new articulo();
+    
         controladorArticulo articulocontrolador = new controladorArticulo();
 
     /**
@@ -37,6 +37,7 @@ public class ListarArticulo extends javax.swing.JFrame {
         cbx_opc = new javax.swing.JComboBox<>();
         btn_buscar = new javax.swing.JButton();
         txt_opc = new javax.swing.JTextField();
+        txt_imprimir = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,11 +69,12 @@ public class ListarArticulo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(cbx_opc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(txt_imprimir, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(txt_opc, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btn_buscar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jLabel1))
-                .addContainerGap(49, Short.MAX_VALUE))
+                        .addComponent(btn_buscar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,7 +89,9 @@ public class ListarArticulo extends javax.swing.JFrame {
                 .addComponent(txt_opc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(9, 9, 9)
                 .addComponent(btn_buscar)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txt_imprimir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -101,6 +105,8 @@ public class ListarArticulo extends javax.swing.JFrame {
         if(cbx_opc.getSelectedIndex()==0){
             String nombre = txt_opc.getText();
             articulocontrolador.Cosultaarticulonombre(nombre);
+            articulo consultaarticulo = new articulo(nombre, nombre, TOP_ALIGNMENT);
+            txt_imprimir.setText(consultaarticulo.getNombre());
         }else {
             int precio = Integer.parseInt(txt_opc.getText());
             articulocontrolador.Cosultaarticuloprecio(precio);
@@ -147,6 +153,7 @@ public class ListarArticulo extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbx_opc;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField txt_imprimir;
     private javax.swing.JTextField txt_opc;
     // End of variables declaration//GEN-END:variables
 }

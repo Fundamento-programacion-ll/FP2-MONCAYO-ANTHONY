@@ -141,6 +141,34 @@ public class controladorArticulo {
         }
     }
     
+    public articulo consultararticulo (int idarticulo){
+        articulo art = null;
+        String nombre ="";
+        String sqlconsult = 
+                "Select * from articulos where idArticulo = ?";
+        try {
+            ps = conexion.getConxion().prepareStatement(sqlconsult);
+            ps.setInt(1, idarticulo);
+            rsconsult = ps.executeQuery();
+            
+            while(rsconsult.next()){
+                nombre= rsconsult.getString("nombre");
+                String descripcion= rsconsult.getString("descripcion");
+                float precio= rsconsult.getFloat("precio");
+                if (rsconsult.next()==true){
+                System.out.println("El producto es: "+ nombre +" "+ descripcion +" "+ precio);}
+                art = new articulo(nombre, descripcion, precio);
+            }
+            
+            JOptionPane.showMessageDialog(null, "Consulta realizada");
+            
+        } catch (SQLException ex) {
+            System.out.println("ERROR"+ ex);
+                  JOptionPane.showMessageDialog(null, "ERROR");
+        }
+        
+    return art;
+    }
     public void actualizar (){
     
     

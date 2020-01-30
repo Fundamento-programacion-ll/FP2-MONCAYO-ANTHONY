@@ -136,7 +136,8 @@ public class BuscarArticulo extends javax.swing.JFrame {
             
             txt_nombre.setText("");
         }else if (cbx_opc.getSelectedIndex()==1){
-            
+           articulocontrolador.Cosultaarticuloprecio(Integer.parseInt(cbx_opc.getSelectedItem().toString()));
+           
         }else if (cbx_opc.getSelectedIndex()==2){
             
         }else if (cbx_opc.getSelectedIndex()==3){
