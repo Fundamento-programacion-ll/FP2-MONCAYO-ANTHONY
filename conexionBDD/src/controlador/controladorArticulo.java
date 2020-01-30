@@ -169,8 +169,53 @@ public class controladorArticulo {
         
     return art;
     }
-    public void actualizar (){
     
-    
+    public articulo consultararticulonom (String nombr){
+        articulo art = null;
+        String nombre ="";
+        String sqlconsult = 
+                "Select * from articulos where nombre = ?";
+        try {
+            ps = conexion.getConxion().prepareStatement(sqlconsult);
+            ps.setString(1, nombr);
+            rsconsult = ps.executeQuery();
+            
+            while(rsconsult.next()){
+                
+                nombre= rsconsult.getString("nombre");
+                String descripcion= rsconsult.getString("descripcion");
+                float precio= rsconsult.getFloat("precio");
+                System.out.println("El producto es: "+ nombre + " "+ descripcion + " "+ precio);
+                if (rsconsult.next()==true){
+                System.out.println("El producto es: "+ nombre +" "+ descripcion +" "+ precio);}
+                art = new articulo(nombre, descripcion, precio);
+            }
+            
+            JOptionPane.showMessageDialog(null, "Consulta realizada");
+            
+        } catch (SQLException ex) {
+            System.out.println("ERROR"+ ex);
+                  JOptionPane.showMessageDialog(null, "ERROR");
+        }
+        
+    return art;
+    }
+    public void ActualizarCliente(articulo cli) {
+        
+        String sqlact = "UPDATE articulos SET nombre=?, descripcion=?, precio=? WHERE idArticulo = ?";
+        PreparedStatement ps =null;
+        
+            try {
+                ps = conexion.getConxion().prepareStatement(sqlact);
+                
+                ps.setString(1, cli.getNombre());
+                ps.setString(2, cli.getDescr());
+                ps.setFloat(3, cli.getPrecio());
+                ps.setInt(4, cli.getIdart());
+                ps.executeUpdate();
+            } catch (SQLException ex) {
+                System.out.println("ERROR"+ ex);
+                  JOptionPane.showMessageDialog(null, "ERROR");
+            }
     }
 }
