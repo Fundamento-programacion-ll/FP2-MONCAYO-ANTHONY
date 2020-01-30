@@ -213,6 +213,8 @@ public class controladorArticulo {
                 ps.setFloat(3, cli.getPrecio());
                 ps.setInt(4, cli.getIdart());
                 ps.executeUpdate();
+                
+                JOptionPane.showMessageDialog(null, "Datos Actualizados");
             } catch (SQLException ex) {
                 System.out.println("ERROR"+ ex);
                   JOptionPane.showMessageDialog(null, "ERROR");
