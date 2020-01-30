@@ -10,18 +10,12 @@ package modelo;
  * @author antho
  */
 public class articulo {
-    private String nombre;
+    String nombre;
     String descr;
     float precio;
-    int idart;
+    
 
-    public int getIdart() {
-        return idart;
-    }
-
-    public void setIdart(int idart) {
-        this.idart = idart;
-    }
+    
     
     public String getNombre() {
         return nombre;
@@ -56,12 +50,7 @@ public class articulo {
         this.precio = precio;
     }
 
-    public articulo(String nombre, String descr, float precio, int idart) {
-        this.nombre = nombre;
-        this.descr = descr;
-        this.precio = precio;
-        this.idart = idart;
-    }
+    
     
     
 }

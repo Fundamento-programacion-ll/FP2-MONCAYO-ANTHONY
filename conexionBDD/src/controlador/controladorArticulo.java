@@ -9,6 +9,7 @@ import conexion.conector;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -207,11 +208,10 @@ public class controladorArticulo {
         
             try {
                 ps = conexion.getConxion().prepareStatement(sqlact);
-                
                 ps.setString(1, cli.getNombre());
                 ps.setString(2, cli.getDescr());
                 ps.setFloat(3, cli.getPrecio());
-                ps.setInt(4, cli.getIdart());
+
                 ps.executeUpdate();
                 
                 JOptionPane.showMessageDialog(null, "Datos Actualizados");
@@ -220,4 +220,20 @@ public class controladorArticulo {
                   JOptionPane.showMessageDialog(null, "ERROR");
             }
     }
+    
+   public ArrayList obtenerDatos() throws SQLException{
+        ArrayList<articulo> listaNombres = new ArrayList<>();        
+        String selectDatos = "select * from articulos";
+        ps = conexion.getConxion().prepareStatement(selectDatos);
+        rsconsult = ps.executeQuery();        
+        while (rsconsult.next()) {            
+            articulo art = new articulo();
+            art.setNombre(rsconsult.getString(2));
+            art.setDescr(rsconsult.getString(3));
+            art.setPrecio(rsconsult.getInt(4));
+            listaNombres.add(art);
+        }
+        return listaNombres;
+    }
+
 }

@@ -204,9 +204,9 @@ public class ListarArticulo extends javax.swing.JFrame {
 
     private void btn_actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_actualizarActionPerformed
         
-        articulo arti = new articulo(txt_imprimir.getText(), txt_descripcion.getText(),Float.parseFloat(txt_precio.getText()), Integer.parseInt(txt_opc.getText()));
+//        articulo arti = new articulo(txt_imprimir.getText(), txt_descripcion.getText(),Float.parseFloat(txt_precio.getText()), Integer.parseInt(txt_opc.getText()));
         
-        articulocontrolador.ActualizarCliente(arti);
+//        articulocontrolador.ActualizarCliente(arti);
     }//GEN-LAST:event_btn_actualizarActionPerformed
 
     /**

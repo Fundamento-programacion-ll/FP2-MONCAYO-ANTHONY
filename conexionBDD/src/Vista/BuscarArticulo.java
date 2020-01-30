@@ -6,6 +6,10 @@
 package Vista;
 
 import controlador.controladorArticulo;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import modelo.articulo;
 
 /**
@@ -13,15 +17,33 @@ import modelo.articulo;
  * @author antho
  */
 public class BuscarArticulo extends javax.swing.JFrame {
-     articulo consultaarticulo = new articulo();
-     controladorArticulo articulocontrolador = new controladorArticulo();
-
+    articulo nuevoArticulo = 
+                new articulo();
+    controladorArticulo articuloControlador = 
+                new controladorArticulo(); 
+    ArrayList<articulo> listaNombres = null;
     /**
      * Creates new form BuscarArticulo
      */
     public BuscarArticulo() {
         initComponents();
+        
+        
+        cbx_opc.addItem("Opcion Nueva");
+        
+        try {
+            System.out.println("Imprimir Lista");
+            listaNombres = articuloControlador.obtenerDatos();
+            for (articulo art : listaNombres) {
+            
+            cbx_opc.addItem(art.getNombre());
+        }
+        } catch (SQLException ex) {
+            Logger.getLogger(BuscarArticulo.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -48,7 +70,11 @@ public class BuscarArticulo extends javax.swing.JFrame {
 
         jLabel1.setText("Buscar articulo");
 
-        cbx_opc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID 1", "ID 2", "ID 3", "ID 4", "ID 5" }));
+        cbx_opc.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbx_opcItemStateChanged(evt);
+            }
+        });
 
         jLabel2.setText("Nombre");
 
@@ -74,12 +100,12 @@ public class BuscarArticulo extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(49, 49, 49)
                         .addComponent(jLabel1)
                         .addGap(56, 56, 56)
-                        .addComponent(cbx_opc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cbx_opc, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel4)
@@ -132,20 +158,27 @@ public class BuscarArticulo extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        if(cbx_opc.getSelectedIndex()==0){
-            
-            txt_nombre.setText("");
-        }else if (cbx_opc.getSelectedIndex()==1){
-           articulocontrolador.Cosultaarticuloprecio(Integer.parseInt(cbx_opc.getSelectedItem().toString()));
-           
-        }else if (cbx_opc.getSelectedIndex()==2){
-            
-        }else if (cbx_opc.getSelectedIndex()==3){
-            
-        }else if (cbx_opc.getSelectedIndex()==4){
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void cbx_opcItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbx_opcItemStateChanged
+        if (evt.getStateChange() == 1) {
+            System.out.println(evt.getItem().toString());
+            try {
+                listaNombres = articuloControlador.obtenerDatos();
+                for (articulo art : listaNombres) {
+                    if (art.getNombre().equals(evt.getItem().toString())) {
+                        txt_nombre.setText(art.getNombre());
+                        txt_descripcion.setText(art.getDescr());
+                        txt_precio.setText(String.valueOf(art.getPrecio()));
+                    }                    
+                }                
+            } catch (SQLException ex) {
+               Logger.getLogger(BuscarArticulo.class.getName()).log(Level.SEVERE, null, ex);
+            }
             
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_cbx_opcItemStateChanged
 
     /**
      * @param args the command line arguments
