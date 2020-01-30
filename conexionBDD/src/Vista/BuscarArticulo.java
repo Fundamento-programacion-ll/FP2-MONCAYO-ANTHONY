@@ -26,8 +26,9 @@ public class BuscarArticulo extends javax.swing.JFrame {
      * Creates new form BuscarArticulo
      */
     public BuscarArticulo() {
-        initComponents();
         
+        initComponents();
+        btn_act.setVisible(false);
         
         cbx_opc.addItem("Opcion Nueva");
         
@@ -64,7 +65,7 @@ public class BuscarArticulo extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txt_descripcion = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btn_act = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,6 +74,11 @@ public class BuscarArticulo extends javax.swing.JFrame {
         cbx_opc.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cbx_opcItemStateChanged(evt);
+            }
+        });
+        cbx_opc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cbx_opcMouseClicked(evt);
             }
         });
 
@@ -93,7 +99,12 @@ public class BuscarArticulo extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Actualizar");
+        btn_act.setText("Actualizar");
+        btn_act.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_actActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -114,7 +125,7 @@ public class BuscarArticulo extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton1)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton2))
+                                .addComponent(btn_act))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
@@ -149,7 +160,7 @@ public class BuscarArticulo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btn_act))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -173,12 +184,26 @@ public class BuscarArticulo extends javax.swing.JFrame {
                         txt_precio.setText(String.valueOf(art.getPrecio()));
                     }                    
                 }                
+                
             } catch (SQLException ex) {
                Logger.getLogger(BuscarArticulo.class.getName()).log(Level.SEVERE, null, ex);
             }
             
         }
     }//GEN-LAST:event_cbx_opcItemStateChanged
+
+    private void btn_actActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_actActionPerformed
+        articulo arti = new articulo(txt_nombre.getText(), txt_descripcion.getText(),Float.parseFloat(txt_precio.getText()));
+        articuloControlador.ActualizarCliente(arti);
+    }//GEN-LAST:event_btn_actActionPerformed
+
+    private void cbx_opcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbx_opcMouseClicked
+        if (txt_nombre.getText()==null || txt_descripcion.getText()==null || txt_precio.getText()==null ){
+                    btn_act.setVisible(false);
+                }else{
+                    btn_act.setVisible(true);
+                }
+    }//GEN-LAST:event_cbx_opcMouseClicked
 
     /**
      * @param args the command line arguments
@@ -216,9 +241,9 @@ public class BuscarArticulo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_act;
     private javax.swing.JComboBox<String> cbx_opc;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

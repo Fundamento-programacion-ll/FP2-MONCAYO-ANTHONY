@@ -203,7 +203,7 @@ public class controladorArticulo {
     }
     public void ActualizarCliente(articulo cli) {
         
-        String sqlact = "UPDATE articulos SET nombre=?, descripcion=?, precio=? WHERE idArticulo = ?";
+        String sqlact = "UPDATE articulos SET nombre=?, descripcion=?, precio=? WHERE nombre = ?";
         PreparedStatement ps =null;
         
             try {
@@ -211,7 +211,7 @@ public class controladorArticulo {
                 ps.setString(1, cli.getNombre());
                 ps.setString(2, cli.getDescr());
                 ps.setFloat(3, cli.getPrecio());
-
+                ps.setString(4, cli.getNombre());
                 ps.executeUpdate();
                 
                 JOptionPane.showMessageDialog(null, "Datos Actualizados");
