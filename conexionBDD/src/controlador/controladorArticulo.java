@@ -235,5 +235,16 @@ public class controladorArticulo {
         }
         return listaNombres;
     }
+   
+   public void eliminar () throws SQLException{
+   
+           String selectDatos = "select * from articulos";
+           
+           ps = conexion.getConxion().prepareStatement(selectDatos);
+           rsconsult = ps.executeQuery();
+           
+           
+           
+   }
 
 }

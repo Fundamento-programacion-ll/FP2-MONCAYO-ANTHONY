@@ -29,7 +29,6 @@ public class BuscarArticulo extends javax.swing.JFrame {
         
         initComponents();
         btn_act.setVisible(false);
-        
         cbx_opc.addItem("Opcion Nueva");
         
         try {
@@ -81,6 +80,11 @@ public class BuscarArticulo extends javax.swing.JFrame {
                 cbx_opcMouseClicked(evt);
             }
         });
+        cbx_opc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbx_opcActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Nombre");
 
@@ -92,7 +96,7 @@ public class BuscarArticulo extends javax.swing.JFrame {
         txt_descripcion.setRows(5);
         jScrollPane1.setViewportView(txt_descripcion);
 
-        jButton1.setText("Buscar");
+        jButton1.setText("Eliminar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -175,6 +179,9 @@ public class BuscarArticulo extends javax.swing.JFrame {
     private void cbx_opcItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbx_opcItemStateChanged
         if (evt.getStateChange() == 1) {
             System.out.println(evt.getItem().toString());
+            
+                    btn_act.setVisible(true);
+                
             try {
                 listaNombres = articuloControlador.obtenerDatos();
                 for (articulo art : listaNombres) {
@@ -198,12 +205,12 @@ public class BuscarArticulo extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_actActionPerformed
 
     private void cbx_opcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbx_opcMouseClicked
-        if (txt_nombre.getText()==null || txt_descripcion.getText()==null || txt_precio.getText()==null ){
-                    btn_act.setVisible(false);
-                }else{
-                    btn_act.setVisible(true);
-                }
+        
     }//GEN-LAST:event_cbx_opcMouseClicked
+
+    private void cbx_opcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_opcActionPerformed
+        
+    }//GEN-LAST:event_cbx_opcActionPerformed
 
     /**
      * @param args the command line arguments
