@@ -32,5 +32,15 @@ public class cuadrado extends Dimensiones{
 
     public cuadrado() {
     }
+    public void resultadoAC (){
+        System.out.println("El Área es: "+ areaCu(getLado()));
+    }
     
+    public void resultadoVC (){
+        System.out.println("El Volumen es: "+ volumenC(getLado()));
+    }
+    
+    public void resultadoPC (){
+        System.out.println("El Perimetro es: "+ perimetroC(getLado()));
+    }
 }

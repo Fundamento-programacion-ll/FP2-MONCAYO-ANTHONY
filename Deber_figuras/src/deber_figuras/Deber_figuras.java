@@ -81,7 +81,30 @@ public class Deber_figuras {
                       }
                 break;
             case 3:
-                    System.out.println("Ingrese el radio del Triángulo");
+                    op2 = Integer.parseInt(JOptionPane.showInputDialog("MENU \n Cuadrado \n"
+                    + "1. Area \n"
+                    + "2. Volumen \n"
+                    + "3. Perimetro \n"));
+                      switch (op2){
+                        case 1:
+                             l=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el lado"));
+                             cuad.setLado(l);
+                             cuad.resultadoAC();
+                             break;
+                        case 2:
+                             l=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el lado"));
+                             cuad.setLado(l);
+                             cuad.resultadoVC();
+                             break;
+                        case 3:
+                             l=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el lado"));
+                             cuad.setLado(l);
+                             cuad.resultadoPC();
+                             break;
+                        default:
+                             System.out.println("No está disponible esa opcion");
+                             break;
+                      }
                 break;
             default:
                     JOptionPane.showMessageDialog(null, "Opción no Válida", "FAIL", JOptionPane.ERROR_MESSAGE);

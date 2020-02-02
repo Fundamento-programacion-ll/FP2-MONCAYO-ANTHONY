@@ -70,8 +70,18 @@ public class Dimensiones {
     }
     
     public float perimetrot (float lado){
-        return (float) Math.pow(lado, 3);
+        return lado+lado+lado;
     }
     //Cuadrado
+    public float areaCu (float lado){
+        return (float) Math.pow(lado, 2);
+    }
     
+    public float volumenC (float lado){
+        return (float) Math.pow(lado, 3);
+    }
+    
+    public float perimetroC (float lado){
+        return 4*lado;
+    }
 }
