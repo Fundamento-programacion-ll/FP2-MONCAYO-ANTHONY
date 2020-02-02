@@ -32,8 +32,8 @@ public class Perro extends animal{
 
     public Perro() {
     }
-    public void datos (){
-        System.out.println("Resultado: "+ suma(1, 2));
+    public void datos (int num1, int num2){
+        System.out.println("Resultado: "+ suma(num1, num2));
         System.out.println("Nombre: "+ getNombre()+ "Edad: "+ getEdad()+ "genero "+ getGenero());
     }
     

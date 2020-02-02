@@ -5,6 +5,8 @@
  */
 package herencias;
 
+import java.util.Scanner;
+
 /**
  *
  * @author antho
@@ -17,12 +19,17 @@ public class Herencias {
     public static void main(String[] args) {
         
         Perro perrito = new Perro(1, "perro", "macho","Firulais", 1);
-        
         Gato gatito = new Gato(1, "perro", "macho","Firulais", 1);
-        perrito.datos();
+        System.out.println("Ingrese el numero 1 y numero 2");
+        Scanner sc = new Scanner(System.in);
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+                
+        perrito.datos(num1,num2);
+       
         gatito.datos();
         
-        
+         ;
     }
     
 }

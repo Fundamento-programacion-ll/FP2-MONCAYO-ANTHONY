@@ -10,7 +10,7 @@ package deber_figuras;
  * @author antho
  */
 public class Dimensiones {
-    private float lado, base, altura;
+    private float lado, base, altura,radio;
 
     public float getLado() {
         return lado;
@@ -36,13 +36,27 @@ public class Dimensiones {
         this.altura = altura;
     }
 
+    public float getRadio() {
+        return radio;
+    }
+
+    public void setRadio(float radio) {
+        this.radio = radio;
+    }
+
     public Dimensiones() {
     }
 
-    public Dimensiones(float lado, float base, float altura) {
+    public Dimensiones(float lado, float base, float altura, float radio) {
         this.lado = lado;
         this.base = base;
         this.altura = altura;
+        this.radio = radio;
+    }
+
+    public  float circunferencia(){
+    
+        return 0;
     }
     
 }
