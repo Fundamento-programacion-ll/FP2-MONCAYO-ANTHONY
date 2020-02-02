@@ -19,23 +19,41 @@ public class Deber_figuras {
      */
     public static void main(String[] args) {
         
-        int r =0;
-        int b,a;
-        
-        System.out.println("Menu");
-        System.out.println("1. Circulo");
-        System.out.println("2. Cuadrado");
-        System.out.println("3. Triángulo");
+        float r;
+        float b,a;
+        Circulo cir = new Circulo();
+        trinagulo tr = new trinagulo();
+        cuadrado cuad = new cuadrado();
         int opc = 0;
-        
         int opc2;
+        int op2;
         do{
         opc = Integer.parseInt(JOptionPane.showInputDialog(null,"Menu \n1. Circulo \n2. Triángulo \n 3. Cuadrado"));
         switch(opc) {
             case 1:
-                System.out.println("Ingrese el radio del circulo");
+                    op2 = Integer.parseInt(JOptionPane.showInputDialog("MENU \n Triangulo \n"
+                    + "1. Area \n"
+                    + "2. Circunferencia \n"));
+                      switch (op2){
+                         case 1:
+                             r=Integer.parseInt(JOptionPane.showInputDialog("Ingrese la base"));
+                             System.out.println("r: "+ r);
+                             cir.setRadio(r);
+                             cir.resultadoA();
+                             break;
+                         case 2:
+                             r=Integer.parseInt(JOptionPane.showInputDialog("Ingrese la base"));
+                             cir.setRadio(r);
+                             cir.resultadoC();
+                             break;
+                         default:
+                             System.out.println("No está disponible esa opcion");
+                             break;
+                      }
+                
                 
                 break;
+                
             case 2:
                       System.out.println("Ingrese el radio del Cuadrado");
                 break;
@@ -43,7 +61,7 @@ public class Deber_figuras {
                       System.out.println("Ingrese el radio del Triángulo");
                 break;
             default:
-                      System.out.println("Opción no Válida");
+                      JOptionPane.showMessageDialog(null, "Opción no Válida", "FAIL", JOptionPane.ERROR_MESSAGE);
                 break;
         }
             opc2 =JOptionPane.showConfirmDialog(null, "Desea ingresar otra figura");

@@ -54,9 +54,11 @@ public class Dimensiones {
         this.radio = radio;
     }
 
-    public  float circunferencia(){
-    
-        return 0;
+    public  float circunferencia(float radio){       
+        return (float) (2*(Math.PI)* radio);
+    }
+    public float areac (float radio){
+        return (float) ((Math.PI)* radio);
     }
     
 }
