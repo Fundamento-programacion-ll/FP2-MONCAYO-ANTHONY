@@ -53,12 +53,25 @@ public class Dimensiones {
         this.altura = altura;
         this.radio = radio;
     }
-
-    public  float circunferencia(float radio){       
+    //Circulo
+    public float circunferencia(float radio){       
         return (float) (2*(Math.PI)* radio);
     }
     public float areac (float radio){
         return (float) ((Math.PI)* radio);
     }
+    //Triángulo
+    public float areat (float base, float altura){
+        return (base*altura)/2;
+    }
+    
+    public float volument (float base, float altura){
+        return (base*base*altura)/3;
+    }
+    
+    public float perimetrot (float lado){
+        return (float) Math.pow(lado, 3);
+    }
+    //Cuadrado
     
 }

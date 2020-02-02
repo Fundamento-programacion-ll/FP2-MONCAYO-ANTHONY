@@ -13,10 +13,6 @@ public class Circulo extends Dimensiones{
     //circunferencia
     private float circunferencia;
 
-    Circulo() {
-       
-    }
-
     public float getCircunferencia() {
         return circunferencia;
     }
@@ -34,6 +30,9 @@ public class Circulo extends Dimensiones{
         this.circunferencia = circunferencia;
     }
     
+    public Circulo() {
+       
+    }
     
     public void resultadoC (){
         System.out.println("La circuferencia es:"+ circunferencia(getRadio())); 

@@ -37,6 +37,32 @@ public class trinagulo extends Dimensiones{
         this.perimetro = perimetro;
     }
     
+    public trinagulo(float area, float volumen, float perimetro) {
+        this.area = area;
+        this.volumen = volumen;
+        this.perimetro = perimetro;
+    }
     
+    public trinagulo() {
+    
+    }
+    
+    public trinagulo(float area, float volumen, float perimetro, float lado, float base, float altura, float radio) {
+        super(lado, base, altura, radio);
+        this.area = area;
+        this.volumen = volumen;
+        this.perimetro = perimetro;
+    }
+    public void resultadoAT (){
+        System.out.println("El Área es: "+ areat(getBase(),getAltura()));
+    }
+    
+    public void resultadoVT (){
+        System.out.println("El Volumen es: "+ volument(getBase(),getAltura()));
+    }
+    
+    public void resultadoPT (){
+        System.out.println("El Perimetro es: "+ perimetrot(getLado()));
+    }
     
 }

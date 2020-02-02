@@ -11,16 +11,8 @@ package deber_figuras;
  */
 public class cuadrado extends Dimensiones{
     //lado,volumen
-    private float lado,volumen;
-
-    public float getLado() {
-        return lado;
-    }
-
-    public void setLado(float lado) {
-        this.lado = lado;
-    }
-
+    private float volumen;
+    
     public float getVolumen() {
         return volumen;
     }
@@ -28,7 +20,17 @@ public class cuadrado extends Dimensiones{
     public void setVolumen(float volumen) {
         this.volumen = volumen;
     }
-    
-    
+
+    public cuadrado(float volumen) {
+        this.volumen = volumen;
+    }
+
+    public cuadrado(float volumen, float lado, float base, float altura, float radio) {
+        super(lado, base, altura, radio);
+        this.volumen = volumen;
+    }
+
+    public cuadrado() {
+    }
     
 }
