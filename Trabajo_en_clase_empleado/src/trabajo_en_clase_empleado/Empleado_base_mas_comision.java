@@ -38,5 +38,8 @@ public class Empleado_base_mas_comision extends Empleador_comision{
     public Empleado_base_mas_comision() {
     }
     
+    public double ingresos(){
     
+    return salario_base*super.calcular_ingresos();
+    }
 }

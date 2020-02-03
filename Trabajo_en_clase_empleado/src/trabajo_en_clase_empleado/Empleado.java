@@ -9,7 +9,7 @@ package trabajo_en_clase_empleado;
  *
  * @author antho
  */
-public class Empleado {
+public abstract class  Empleado {
     private String nombre,apellido;
     private int ci;
 
@@ -46,9 +46,6 @@ public class Empleado {
         this.ci = ci;
     }
     
-    public double calcular_ingresos(){
-    
-    return 0;
-    }
+    public abstract double calcular_ingresos();
     
 }

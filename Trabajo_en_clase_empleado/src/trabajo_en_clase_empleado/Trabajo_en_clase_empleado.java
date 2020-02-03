@@ -19,6 +19,14 @@ public class Trabajo_en_clase_empleado {
         Empleado_Asalariado p = new Empleado_Asalariado(32, "nombre", "apellido", 120);
         System.out.println(p);
         
+        Empleador_comision e = new Empleador_comision(320, 430, "nombre", "apellido", 320);
+        System.out.println(e);
+        
+        Empleado_por_horas h = new Empleado_por_horas(210, 320, "nombre", "apellido", 320);
+        System.out.println(h);
+        
+        Empleado_base_mas_comision b = new Empleado_base_mas_comision(210, 320, 2310);
+        System.out.println(b);
     }
     
 }

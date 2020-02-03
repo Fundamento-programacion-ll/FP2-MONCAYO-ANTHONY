@@ -43,5 +43,16 @@ public class Empleador_comision extends Empleado{
     public Empleador_comision() {
     }
 
+    @Override
+    public double calcular_ingresos() {
+        return 0.0;
+    }
+
+    @Override
+    public String toString() {
+        return "Empleado Asalariado: \n Nombre: "+ getNombre()+ " Apellido: "+ getApellido()+ "Salario semanal: "+ getTarifa_comision(); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
     
 }

@@ -18,7 +18,7 @@ public class Empleado_Asalariado extends Empleado{
     }
 
     public void setSalario_semanal(double Salario_semanal) {
-        this.Salario_semanal = Salario_semanal;
+        this.Salario_semanal = (Salario_semanal);
     }
 
     public Empleado_Asalariado(double Salario_semanal) {
@@ -31,6 +31,17 @@ public class Empleado_Asalariado extends Empleado{
     }
 
     public Empleado_Asalariado() {
+    }
+
+    @Override
+    public String toString() {
+        return "Empleado Asalariado: \n Nombre: "+ getNombre()+ " Apellido: "+ getApellido()+ "Salario semanal: "+ getSalario_semanal(); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
+    @Override
+    public double calcular_ingresos() {
+        return 0.0;
     }
 
     
