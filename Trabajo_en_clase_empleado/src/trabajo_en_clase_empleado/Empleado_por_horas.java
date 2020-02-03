@@ -45,6 +45,7 @@ public class Empleado_por_horas extends Empleado{
 
     @Override
     public double calcular_ingresos() {
+        this.horas=((horas > 0 && horas <= 168)? horas : 0 );
         return (this.horas*this.sueldo);
     }
 
