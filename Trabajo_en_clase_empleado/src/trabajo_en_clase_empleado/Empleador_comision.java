@@ -45,6 +45,8 @@ public class Empleador_comision extends Empleado{
 
     @Override
     public double calcular_ingresos() {
+        this.ventas_brutas = ((ventas_brutas > 0 && ventas_brutas <= 200)? ventas_brutas : 0 );
+        this.tarifa_comision = ((tarifa_comision > 0 && tarifa_comision <= 100)? tarifa_comision : 0 );
         return (this.tarifa_comision + this.ventas_brutas);
     }
 
