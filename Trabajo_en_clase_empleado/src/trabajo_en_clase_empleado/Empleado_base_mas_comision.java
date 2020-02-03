@@ -42,4 +42,11 @@ public class Empleado_base_mas_comision extends Empleador_comision{
     
     return salario_base*super.calcular_ingresos();
     }
+
+    @Override
+    public String toString() {
+        return "Empleado Asalariado: \n Nombre: "+ getNombre()+ " Apellido: "+ getApellido()+ " Comision:  "+ calcular_ingresos();
+    }
+    
+    
 }

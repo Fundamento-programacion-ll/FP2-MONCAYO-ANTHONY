@@ -22,7 +22,7 @@ public class Empleado_por_horas extends Empleado{
     }
 
     public double getHoras() {
-        return horas;
+        return horas ;
     }
 
     public void setHoras(double horas) {
@@ -45,12 +45,12 @@ public class Empleado_por_horas extends Empleado{
 
     @Override
     public double calcular_ingresos() {
-        return 0.0;
+        return (this.horas*this.sueldo);
     }
 
     @Override
     public String toString() {
-        return "Empleado Asalariado: \n Nombre: "+ getNombre()+ " Apellido: "+ getApellido()+ " Por horas: "+ getHoras();
+        return "Empleado Asalariado: \n Nombre: "+ getNombre()+ " Apellido: "+ getApellido()+ " Sueldo por horas: " + calcular_ingresos() + "numero de horas: "+ getHoras();
     }
     
     

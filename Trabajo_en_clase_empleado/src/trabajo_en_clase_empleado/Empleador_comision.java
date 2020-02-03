@@ -18,7 +18,7 @@ public class Empleador_comision extends Empleado{
     }
 
     public void setVentas_brutas(double ventas_brutas) {
-        this.ventas_brutas = ventas_brutas;
+        this.ventas_brutas = ((ventas_brutas > 0 && ventas_brutas <= 200)? ventas_brutas : 0 );
     }
 
     public double getTarifa_comision() {
@@ -26,7 +26,7 @@ public class Empleador_comision extends Empleado{
     }
 
     public void setTarifa_comision(double tarifa_comision) {
-        this.tarifa_comision = tarifa_comision;
+        this.tarifa_comision = ((tarifa_comision > 0 && tarifa_comision <= 100)? tarifa_comision : 0 );
     }
 
     public Empleador_comision(double ventas_brutas, double tarifa_comision) {
@@ -45,12 +45,12 @@ public class Empleador_comision extends Empleado{
 
     @Override
     public double calcular_ingresos() {
-        return 0.0;
+        return (this.tarifa_comision + this.ventas_brutas);
     }
 
     @Override
     public String toString() {
-        return "Empleado Asalariado: \n Nombre: "+ getNombre()+ " Apellido: "+ getApellido()+ "Salario semanal: "+ getTarifa_comision(); //To change body of generated methods, choose Tools | Templates.
+        return "Empleado Asalariado: \n Nombre: "+ getNombre()+ " Apellido: "+ getApellido()+ " Comision: "+ calcular_ingresos(); //To change body of generated methods, choose Tools | Templates.
     }
     
     
