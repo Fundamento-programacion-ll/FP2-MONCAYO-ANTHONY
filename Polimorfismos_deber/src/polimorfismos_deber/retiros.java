@@ -37,7 +37,7 @@ public class retiros extends transaccion{
 
     @Override
     public String toString() {
-        return "Número de cuenta: "+getCuenta()+" su retiro es de: "+getMonto();   
+        return "Su Número de cuenta: "+getCuenta()+" su retiro es de: "+getMonto();   
     }
     
     

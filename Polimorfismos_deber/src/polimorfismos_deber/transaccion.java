@@ -30,7 +30,6 @@ public abstract class transaccion {
     public abstract String ejecutar();
     
     public String obtenercuenta(){
-    
-    return null;
+    return ejecutar();
     }
 }

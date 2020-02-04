@@ -34,12 +34,12 @@ public class deposito extends transaccion{
     
     @Override
     public String ejecutar() {
-        return "Cuenta: "+getCuenta()+"\n A depositado: "+montoDep;
+        return "Su número de Cuenta es: "+getCuenta()+" su monto depositado es de: "+montoDep;
     }
 
     @Override
     public String toString() {
-        return "N_ cuenta es: "+getCuenta()+" su Deposito es de: "+getMontoDep();
+        return "Su Número de cuenta es: "+getCuenta()+" su monto depositado es de: "+getMontoDep();
     }
     
     
