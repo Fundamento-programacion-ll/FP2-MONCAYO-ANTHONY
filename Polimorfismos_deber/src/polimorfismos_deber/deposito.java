@@ -34,7 +34,11 @@ public class deposito extends transaccion{
     
     @Override
     public String ejecutar() {
-        return "Su número de Cuenta es: "+getCuenta()+" su monto depositado es de: "+montoDep;
+        return "Su número de Cuenta es: "+getCuenta()+" su monto depositado es de: "+getMontoDep();
+    }
+    public int dep (int dep, int saldo){
+       int stotal= dep+  saldo;
+       return stotal;
     }
 
     @Override

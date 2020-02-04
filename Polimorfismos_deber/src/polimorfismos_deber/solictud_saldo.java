@@ -13,6 +13,10 @@ public class solictud_saldo extends transaccion{
     
     private double valor;
 
+    public solictud_saldo() {
+        
+    }
+
     public double getValor() {
         return valor;
     }

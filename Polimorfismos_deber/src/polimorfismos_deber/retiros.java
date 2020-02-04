@@ -13,6 +13,10 @@ public class retiros extends transaccion{
     
     private double monto;
 
+    public retiros() {
+        
+    }
+
     public double getMonto() {
         return monto;
     }
@@ -34,7 +38,12 @@ public class retiros extends transaccion{
     public String ejecutar() {
         return " Su númeto de Cuenta es: "+getCuenta()+" su saldo es: "+monto;
     }
-
+    
+    public int retiro (int dep, int saldo){
+       int stotal= saldo - dep;
+       return stotal;
+    }
+    
     @Override
     public String toString() {
         return "Su Número de cuenta: "+getCuenta()+" su retiro es de: "+getMonto();   
