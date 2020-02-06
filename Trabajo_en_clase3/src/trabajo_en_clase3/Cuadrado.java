@@ -33,7 +33,7 @@ public class Cuadrado extends punto{
 
     public Cuadrado(double lado, int x, int y) {
         super(x, y);
-        this.lado = lado;
+        this.lado = lado ;
     }
 
     /**public Cuadrado() {
