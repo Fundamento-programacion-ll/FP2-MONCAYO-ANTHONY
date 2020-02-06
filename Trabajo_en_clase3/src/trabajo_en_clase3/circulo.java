@@ -5,6 +5,9 @@
  */
 package trabajo_en_clase3;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 /**
  *
  * @author antho
@@ -15,6 +18,10 @@ public class circulo extends punto{
 
     public circulo(int puntox, int puntoy) {
         super(puntox, puntoy);
+    }
+
+    public circulo() {
+        
     }
 
     public int getRadio() {
@@ -34,5 +41,15 @@ public class circulo extends punto{
         this.radio = radio;
     }
     
+     public void paint(Graphics g){
+        g.setColor(Color.RED);
+             g.drawOval(super.getX(), super.getY(), this.radio, this.radio);   
+    }
+
+    @Override
+    public String toString() {
+        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+    }
     
+     
 }

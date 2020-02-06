@@ -29,21 +29,22 @@ public class Trabajo_en_clase3 {
      */
     public static void main(String[] args) {
         int dim1,dim2;
-        punto p = new punto(0, 0);
         JFrame ventana = new JFrame();
         
-        String opc =JOptionPane.showInputDialog(null,"Ingrese la opcion \n Punto \n Circulo");
-        if (opc.equalsIgnoreCase("punto")){
-        
-        }else if(opc.equalsIgnoreCase("circulo")){
-        
-        
-        }
-        
-        ventana.add(p);
+       String input = JOptionPane.showInputDialog(null, "Ingreser la opcion a dibujar: punto, circulo");
+    if (input.equalsIgnoreCase("punto")) {
+        punto pto= new punto();
+        ventana.add(pto);
         ventana.setSize(700,400);
         ventana.setVisible(true);
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    } else if(input.equalsIgnoreCase("circulo")){
+        circulo circle = new circulo();
+    } else {
+        JOptionPane.showMessageDialog(null, "Opcion no encontrada");
+    }
+        
+        
         
     }
     

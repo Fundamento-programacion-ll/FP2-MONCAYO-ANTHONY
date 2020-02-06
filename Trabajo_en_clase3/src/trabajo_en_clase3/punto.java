@@ -18,43 +18,39 @@ public class punto extends figuras{
     
     private int puntox, puntoy;
 
-    public int getPuntox() {
+     public punto(int x, int y) {
+        super();
+        this.puntox = puntox;
+        this.puntoy = puntoy;        
+    }
+
+    public int getX() {
         return puntox;
     }
 
-    public void setPuntox(int puntox) {
+    public void setX(int x) {
         this.puntox = puntox;
     }
 
-    public int getPuntoy() {
+    public int getY() {
         return puntoy;
     }
 
-    public void setPuntoy(int puntoy) {
-        this.puntoy = puntoy;
-    }
-
-    public punto(int puntox, int puntoy) {
-        this.puntox = puntox;
+    public void setY(int y) {
         this.puntoy = puntoy;
     }
     
     public punto(){
         super();
         String datos = JOptionPane.showInputDialog(null,"Ingrese los valores");
-        StringTokenizer tokens = new StringTokenizer(datos);
+        StringTokenizer tokens = new StringTokenizer(datos,",");
         this.puntox=Integer.parseInt(tokens.nextToken());
         this.puntoy=Integer.parseInt(tokens.nextToken());
-        for (int i = 0; i < 2&&tokens.hasMoreTokens(); i++) {
-            
-        }
-    
     }
     
     @Override
-    public void Dibujo(Graphics g) {
+    public void paint(Graphics g) {
         g.setColor(Color.RED);
-        System.out.println(this.puntox+" "+ this.puntoy);
         g.fillOval(this.puntox, this.puntoy, 30, 30);
         
     }
@@ -63,6 +59,4 @@ public class punto extends figuras{
     public String toString() {
         return "punto{" + "puntox=" + puntox + ", puntoy=" + puntoy + '}';
     }
-    
-    
 }
