@@ -1,0 +1,52 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package comparadores;
+
+import java.util.StringTokenizer;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author antho
+ */
+public class provincias {
+    
+    private String nombre;
+    private int num_hab;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getNum_hab() {
+        return num_hab;
+    }
+
+    public void setNum_hab(int num_hab) {
+        this.num_hab = num_hab;
+    }
+
+    public provincias() {
+        
+        String datos = JOptionPane.showInputDialog(null,"Ingrese los valores");
+        StringTokenizer tokens = new StringTokenizer(datos,",");
+        this.nombre=tokens.nextToken();
+        this.num_hab=Integer.parseInt(tokens.nextToken());
+        
+    }
+
+    public provincias(String nombre, int num_hab) {
+        this.nombre = nombre;
+        this.num_hab = num_hab;
+    }
+    
+    
+    
+}
