@@ -48,7 +48,7 @@ public class provincias {
 
     @Override
     public String toString() {
-        return ""+ getNombre()+ " habitantes: "+getNum_hab();
+        return "Nombre: "+ getNombre()+ " habitantes: "+getNum_hab();
     }
     
     

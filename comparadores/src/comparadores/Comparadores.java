@@ -21,8 +21,8 @@ public class Comparadores {
         p.setListaprovincias();
         salida += "Lista Provincias: \n"+p.toString();
         System.out.println(salida);
-        
-        p.ordenarp();
+        p.ordenarnum();
+        //p.ordenarp();
         salida += "Lista Provincias: \n"+p.toString();
         System.out.println(salida);
         

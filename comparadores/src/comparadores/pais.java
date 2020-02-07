@@ -55,6 +55,11 @@ public class pais {
 
     @Override
     public String toString() {
-        return "Los paises son "+ this.listaprovincias.toString()+ "";
+        return "Lista Provincias \n "+ listaprovincias;
+    }
+
+    void ordenarnum() {
+        
+        Collections.sort(listaprovincias, new comparador());
     }
 }
