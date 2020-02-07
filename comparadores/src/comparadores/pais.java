@@ -53,13 +53,15 @@ public class pais {
      Collections.sort(listaprovincias, new comparador());
     }
 
-    @Override
-    public String toString() {
-        return "Lista Provincias \n "+ listaprovincias;
-    }
+    
 
     void ordenarnum() {
         
-        Collections.sort(listaprovincias, new comparador());
+        Collections.sort(listaprovincias, new comparadorn());
+    }
+    
+    @Override
+    public String toString() {
+        return "Lista Provincias \n "+ listaprovincias;
     }
 }
