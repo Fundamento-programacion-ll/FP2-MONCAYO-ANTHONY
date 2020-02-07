@@ -34,17 +34,20 @@ public class provincias {
     }
 
     public provincias() {
-        
         String datos = JOptionPane.showInputDialog(null,"Ingrese los valores");
         StringTokenizer tokens = new StringTokenizer(datos,",");
         this.nombre=tokens.nextToken();
         this.num_hab=Integer.parseInt(tokens.nextToken());
-        
     }
 
     public provincias(String nombre, int num_hab) {
         this.nombre = nombre;
         this.num_hab = num_hab;
+    }
+
+    @Override
+    public String toString() {
+        return ""+ getNombre()+ " ";
     }
     
     

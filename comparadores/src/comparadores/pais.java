@@ -6,6 +6,9 @@
 package comparadores;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.StringTokenizer;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,10 +22,16 @@ public class pais {
     }
 
     public void setListaprovincias() {
-        int op;
+        int opcion ;
         provincias provincia;
+        do {            
+            provincia = new provincias();
+            agregarprov(provincia);
+            
+            opcion = JOptionPane.showConfirmDialog(null, "Mas Provincias", "Continuar",JOptionPane.YES_NO_CANCEL_OPTION);
+        } while (opcion==JOptionPane.YES_NO_CANCEL_OPTION); 
         
-        this.listaprovincias = listaprovincias;
+        
     }
 
     public pais(ArrayList<provincias> listaprovincias) {
@@ -38,12 +47,14 @@ public class pais {
         
     this.listaprovincias.add(p);
     }
+    
+    public void ordenarp (){
+    
+     Collections.sort(listaprovincias, new comparador());
+    }
 
     @Override
     public String toString() {
-        return "Los paises son "+ this.listaprovincias;
+        return "Los paises son "+ this.listaprovincias.toString()+ "";
     }
-    
-    
-    
 }

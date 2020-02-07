@@ -16,9 +16,13 @@ public class Comparadores {
      */
     public static void main(String[] args) {
         
+        String salida = "";
         provincias pr = new provincias();
         pais pa  = new pais();
-        pa.agregarprov(pr);
+        pa.setListaprovincias();
+        salida += "Lista Provincias: \n "+ pa.toString();
+        System.out.println(salida);
+        
     }
     
 }
