@@ -12,9 +12,7 @@ package trabajo_en_clase_sueldos;
 public class administrativo extends persona{
     
     private String area;
-
-  
-
+    
     public String getArea() {
         return area;
     }
@@ -28,7 +26,10 @@ public class administrativo extends persona{
         this.area = area;
     }
 
-  
+    public administrativo() {
+    }
+
+    
     
     @Override
     public int calcularsueldo() {

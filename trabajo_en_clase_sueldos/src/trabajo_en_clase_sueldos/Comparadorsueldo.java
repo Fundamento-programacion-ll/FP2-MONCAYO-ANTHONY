@@ -13,9 +13,16 @@ import java.util.Comparator;
  */
 public class Comparadorsueldo implements Comparator{
      
+    
+    int compararNombre;
+    persona per1, per2;
     @Override
     public int compare(Object t, Object t1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        per1 = (persona)t;
+        per2 = (persona)t1;
+        compararNombre = (per1.getNombre()
+                .compareToIgnoreCase(per2.getNombre()));
+        return compararNombre;
     }
     
 }

@@ -25,10 +25,13 @@ public class limpieza extends persona{
         super(nombre, apellido, genero, edad, ci, sueldo);
         this.turno = turno;
     }
+
+    public limpieza() {
+    }
     
     @Override
     public int calcularsueldo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return 0;
     }
 
     @Override

@@ -35,7 +35,8 @@ public class docente extends persona{
         this.cargo = cargo;
     }
 
-   
+    public docente() {
+    }
     
     @Override
     public int calcularsueldo() {

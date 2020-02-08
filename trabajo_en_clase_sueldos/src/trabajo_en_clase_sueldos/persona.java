@@ -5,15 +5,32 @@
  */
 package trabajo_en_clase_sueldos;
 
+import java.util.StringTokenizer;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author antho
  */
-public abstract class persona {
+public class persona {
     
     private String nombre,apellido,genero;
     private int edad,ci,sueldo;
 
+    public persona() {
+        
+        String datos;
+        datos = JOptionPane.showInputDialog(null, "Ingrese los datos separados por punto y coma "
+                + "\n nombre,apellido,genero,edad,ci,sueldo");
+        StringTokenizer  tokens = new StringTokenizer(datos,",");
+        this.nombre = tokens.nextToken();
+        this.apellido = tokens.nextToken();
+        this.genero = tokens.nextToken();
+        this.edad = Integer.parseInt(tokens.nextToken());
+        this.ci = Integer.parseInt(tokens.nextToken());
+        this.sueldo=Integer.parseInt(tokens.nextToken());
+        
+    }
     public String getNombre() {
         return nombre;
     }
@@ -73,5 +90,16 @@ public abstract class persona {
 
     
     
-    public abstract int calcularsueldo();
+    public  int calcularsueldo(){
+    
+    return this.sueldo;
+    }
+
+    @Override
+    public String toString() {
+        return "Nombre :" +getNombre() + "Apellido: "+ getApellido();
+    }
+    
+    
+    
 }

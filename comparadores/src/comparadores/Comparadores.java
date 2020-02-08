@@ -25,11 +25,11 @@ public class Comparadores {
         
         
         p.ordenarp();
-        salida += "Lista Provincias: \n"+p.toString();
+        salida += "Lista Provincias on: \n"+p.toString();
         System.out.println(salida);
         
         p.ordenarnum();
-        salida += "Lista Habitantes: \n"+p.toString();
+        salida += "Lista Habitantes onh: \n"+p.toString();
         System.out.println(salida);
     }
     
