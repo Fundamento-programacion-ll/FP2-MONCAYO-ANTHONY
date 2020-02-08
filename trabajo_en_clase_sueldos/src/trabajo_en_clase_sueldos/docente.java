@@ -40,12 +40,12 @@ public class docente extends persona{
     
     @Override
     public int calcularsueldo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return getSueldo();
     }
 
     @Override
     public String toString() {
-        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+        return "";
     }
     
     

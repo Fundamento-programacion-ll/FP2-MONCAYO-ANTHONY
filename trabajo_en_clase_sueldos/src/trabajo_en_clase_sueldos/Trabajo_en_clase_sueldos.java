@@ -20,11 +20,16 @@ public class Trabajo_en_clase_sueldos {
         lista_persona l = new lista_persona();
         String salida="";
         l.setListapersonas();
-        salida += "Lista Personas: \n"+l.toString();
+        salida = "Lista Personas: \n"+l.toString();
         System.out.println(salida);
         
         l.ordenarPorNombreProvincia();
-        salida += "Lista Personas por Nombre: \n"+l.toString();
+        salida = "Lista Personas por Nombre: \n"+l.toString();
         System.out.println(salida);
+        
+        l.ordenarPorNumero();        
+        salida = "Lista Personas por Sueldo: \n"+l.toString();
+        System.out.println(salida);
+        
     }   
 }

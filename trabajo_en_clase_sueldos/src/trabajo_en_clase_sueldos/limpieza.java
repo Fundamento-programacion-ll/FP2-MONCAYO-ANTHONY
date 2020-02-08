@@ -31,12 +31,12 @@ public class limpieza extends persona{
     
     @Override
     public int calcularsueldo() {
-        return 0;
+        return getSueldo();
     }
 
     @Override
     public String toString() {
-        return "Sus datos son : "+ getNombre() + " "+ " "+ getApellido()+" "+  getTurno();
+        return "";
     }
     
     

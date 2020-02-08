@@ -21,16 +21,46 @@ public class persona {
         
         String datos;
         datos = JOptionPane.showInputDialog(null, "Ingrese los datos separados por punto y coma "
-                + "\n nombre,apellido,genero,edad,ci,sueldo");
+                + "\n (nombre,apellido,genero,edad,ci,sueldo)");
         StringTokenizer  tokens = new StringTokenizer(datos,",");
+        /*
+        int opciond = Integer.parseInt(JOptionPane.showInputDialog(null,"Escriba en donde trabaja la persona:"
+                + " \n1. Limpieza, \n2. Docente \n3. administrativo"));
+        switch (opciond){
+        case 1:
+             String tur = JOptionPane.showInputDialog(null,"Escriba el turno:");
+             limpieza lim = new limpieza();
+             lim.setTurno(tur);
+        break;
+            case 2 :
+            String ar= JOptionPane.showInputDialog(null,"Escriba el area:");
+            String car= JOptionPane.showInputDialog(null,"Escriba el cargo:");
+            docente doc = new docente();
+            doc.setArea(ar);
+            doc.setCargo(car);
+        break;
+            case 3:
+            String are= JOptionPane.showInputDialog(null,"Escriba el area:");
+            administrativo ad= new administrativo();
+            ad.setArea(are);
+        break;
+            default:
+            JOptionPane.showMessageDialog(null, "Ingrese una opcion valida");
+                break;
+        }
+    */
         this.nombre = tokens.nextToken();
         this.apellido = tokens.nextToken();
         this.genero = tokens.nextToken();
         this.edad = Integer.parseInt(tokens.nextToken());
         this.ci = Integer.parseInt(tokens.nextToken());
         this.sueldo=Integer.parseInt(tokens.nextToken());
-        
+            String are= JOptionPane.showInputDialog(null,"Escriba el area:");
+            administrativo ad= new administrativo();
+            ad.setArea(are);
+    
     }
+    
     public String getNombre() {
         return nombre;
     }

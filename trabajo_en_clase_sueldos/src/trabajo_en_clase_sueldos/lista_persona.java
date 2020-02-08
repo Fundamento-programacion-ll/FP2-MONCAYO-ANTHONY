@@ -30,7 +30,7 @@ public class lista_persona {
     }
 
     public void setListapersonas() {
-    int opcion ;
+    int opcion=0 ;
         persona per;
         do {            
             per = new persona();
@@ -51,16 +51,16 @@ public class lista_persona {
         Collections.sort(listapersonas, new Comparadorsueldo());
     }
     
-    /*
+    
     public void ordenarPorNumero(){
         // ordenar la lista de objetos por el nombre
-        Collections.sort(listaProvincias, new comparadorHabitantes());
-    }*/
+        Collections.sort(listapersonas, new comparadornombre());
+    }
     
 
     @Override
     public String toString() {
-        return "Lista personas \n"+this.listapersonas;
+        return "\n"+this.listapersonas;
     }
 
 }

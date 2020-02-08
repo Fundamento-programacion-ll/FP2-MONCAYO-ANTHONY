@@ -34,7 +34,7 @@ public class administrativo extends persona{
     @Override
     public int calcularsueldo() {
         
-        return 0;
+        return getSueldo();
     }
 
     @Override
