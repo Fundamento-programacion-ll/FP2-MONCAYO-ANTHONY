@@ -8,6 +8,7 @@ for (let index = 0; index < arreglo.length; index++) {
 }
 console.log(arreglo.length);
 arreglo.pop();
+console.log("slice");
 console.log(arreglo[3]); //slice divide
 console.log(arreglo.slice(2, 4));
 console.log(arreglo.shift()); //remueve el primer elemento del arreglo
@@ -57,4 +58,4 @@ var arreglojson = [{
     eda: 2
 }, {
 
-}]
+}];
