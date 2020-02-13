@@ -33,7 +33,12 @@ buscarusuario(arreglojson, ('anthony'));
 //agregar usuario
 
 var nuevousuario = (arreglojson, n, a, e) => {
-    return arreglojson.push(n).nombre, arreglojson.push(a).apellido, arreglojson.push(e).edad;
+    var nuevo = {
+        nombre: n,
+        apellido: a,
+        edad: e
+    }
+    return arreglojson.push(nuevo);
 };
 nuevousuario(arreglojson, ("anthony"), ("moncayo "), (27));
 
@@ -55,3 +60,7 @@ var buscarusuarion = (arreglojson, usuariobuscar) => {
 buscarusuarion(arreglojson, ('dsa'));
 console.log(arreglojson);
 //eliminar usuario
+
+var eliminarusuario = ((arreglojson, u) => {
+
+})
