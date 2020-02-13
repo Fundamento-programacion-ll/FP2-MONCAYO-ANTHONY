@@ -20,4 +20,6 @@ for (let index = 0; index < arreglojson.length; index++) {
     var element = arreglojson[index].edad;
     suma = suma + element;
 };
+arreglojson.push('anthony').nombre;
+console.log(arreglojson);
 console.log(suma);
