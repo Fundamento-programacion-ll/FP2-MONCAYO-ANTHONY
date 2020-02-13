@@ -62,5 +62,10 @@ console.log(arreglojson);
 //eliminar usuario
 
 var eliminarusuario = ((arreglojson, u) => {
+    var usuarioencontrado = arreglojson.find((usuario) => {
+        return usuario.nombre !== u;
+    });
+    console.log(usuarioencontrado);
+});
 
-})
+console.log(arreglojson);
